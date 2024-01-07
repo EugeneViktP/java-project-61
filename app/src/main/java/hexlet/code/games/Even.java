@@ -8,6 +8,13 @@ public class Even {
     public static boolean numberIsEven(int numberToCheck) {
         return (numberToCheck % 2 == 0);
     }
+    public static String getCorrectAnswer(int number) {
+        if (numberIsEven(number)) {
+            return "yes";
+        } else {
+            return "no";
+        }
+    }
     public static void startGame() {
         String ruleEven = "Answer 'yes' if the number is even, otherwise answer 'no'";
         Scanner scanner = new Scanner(System.in);
@@ -22,22 +29,11 @@ public class Even {
             System.out.println("Number is: " + numberPlayed);
             System.out.println("Your answer is: ");
             String answer = scanner.next();
-            if (numberIsEven(numberPlayed)) {
-                String correctAnswer = "yes";
-                if (answer.equals("yes")) {
-                    System.out.println("Correct!");
-                    strake++;
-                } else {
-                    Engine.sendWarning(answer, correctAnswer, userName);
-                }
+            if (answer.equals(getCorrectAnswer(numberPlayed))) {
+                System.out.println("Correct!");
+                strake++;
             } else {
-                String correctAnswer = "no";
-                if (answer.equals("no")) {
-                    System.out.println("Correct!");
-                    strake++;
-                } else {
-                    Engine.sendWarning(answer, correctAnswer, userName);
-                }
+                Engine.sendWarning(answer, getCorrectAnswer(numberPlayed), userName);
             }
         }
         if (strake == 3) {
@@ -45,4 +41,5 @@ public class Even {
         }
         scanner.close();
     }
+
 }
