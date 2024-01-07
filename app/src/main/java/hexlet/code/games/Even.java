@@ -24,19 +24,19 @@ public class Even {
         for (int i = 0; i < Engine.maxRounds; i++) {
             numberBuffer[i] = Engine.getRandom(BOUND_FOR_RANDOM);
         }
-        int strake = 0;
+        int streak = 0;
         for (var numberPlayed : numberBuffer) {
             System.out.println("Number is: " + numberPlayed);
             System.out.println("Your answer is: ");
             String answer = scanner.next();
             if (answer.equals(getCorrectAnswer(numberPlayed))) {
                 System.out.println("Correct!");
-                strake++;
+                streak++;
             } else {
                 Engine.sendWarning(answer, getCorrectAnswer(numberPlayed), userName);
             }
         }
-        if (strake == 3) {
+        if (streak == 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
         scanner.close();

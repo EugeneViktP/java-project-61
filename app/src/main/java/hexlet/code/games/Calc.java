@@ -30,19 +30,19 @@ public class Calc {
             operatorUsed[i] = operators[Engine.getRandom(3)];
             correctAnswer[i] = calcTheResult(firstNumber[i], secondNumber[i], operatorUsed[i]);
         }
-        int strake = 0;
+        int streak = 0;
         for (var i = 0; i < Engine.maxRounds; i++) {
             System.out.println("Question: " + firstNumber[i] + operatorUsed[i] + secondNumber[i]);
             System.out.println("Your answer is: ");
             String answer = scanner.next();
             if (answer.equals(String.valueOf(calcTheResult(firstNumber[i], secondNumber[i], operatorUsed[i])))) {
                 System.out.println("Correct!");
-                strake++;
+                streak++;
             } else {
                 Engine.sendWarning(answer, String.valueOf(correctAnswer[i]), userName);
             }
         }
-        if (strake == 3) {
+        if (streak == 3) {
             System.out.println("Congratulations, " + userName + "!");
         }
         scanner.close();
