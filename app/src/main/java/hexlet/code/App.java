@@ -19,23 +19,12 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         int gameNumber = scanner.nextInt();
         switch (gameNumber) {
-            case 0:
-                System.out.println("Exit");
-                break;
-            case 1:
-                Greet.startGame();
-                break;
-            case 2:
-                Even.startGame();
-                break;
-            case 3:
-                Calc.startGame();
-                break;
-            case 4:
-                GCD.startGame();
-                break;
-            default:
-                break;
+            case 0 -> System.out.println("Exit");
+            case 1 -> Greet.startGame();
+            case 2 -> Even.startGame();
+            case 3 -> Calc.startGame();
+            case 4 -> GCD.startGame();
+            default -> System.out.println("Wrong number");
         }
         scanner.close();
     }

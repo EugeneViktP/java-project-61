@@ -17,6 +17,14 @@ public class Engine {
         System.out.println("Correct Answer is '" + correctAnswer + "'");
         System.out.println("Let's try again, " + userName);
     }
+    public static int[] generateIntArray(int boundForRandom) {
+        int[] numberBuffer = new int[Engine.maxRounds];
+        for (int i = 0; i < Engine.maxRounds; i++) {
+            numberBuffer[i] = Engine.getRandom(boundForRandom);
+        }
+        return numberBuffer;
+    }
+
 
 
 

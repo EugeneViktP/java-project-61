@@ -12,28 +12,24 @@ public class Even {
     public static String getCorrectAnswer(int number) {
         if (numberIsEven(number)) {
             return "yes";
-        } else {
-            return "no";
         }
+        return "no";
     }
     public static void startGame() {
         Scanner scanner = new Scanner(System.in);
         String userName = Cli.greetings();
         System.out.println(Engine.evenRules);
-        int[] numberBuffer = new int[Engine.maxRounds];
-        for (int i = 0; i < Engine.maxRounds; i++) {
-            numberBuffer[i] = Engine.getRandom(BOUND_FOR_RANDOM);
-        }
+        int[] numBuffer = Engine.generateIntArray(BOUND_FOR_RANDOM);
         int streak = 0;
-        for (var numberPlayed : numberBuffer) {
-            System.out.println("Number is: " + numberPlayed);
+        for (var numPlayed : numBuffer) {
+            System.out.println("Number is: " + numPlayed);
             System.out.println("Your answer is: ");
             String answer = scanner.next();
-            if (answer.equals(getCorrectAnswer(numberPlayed))) {
+            if (answer.equals(getCorrectAnswer(numPlayed))) {
                 System.out.println("Correct!");
                 streak++;
             } else {
-                Engine.sendWarning(answer, getCorrectAnswer(numberPlayed), userName);
+                Engine.sendWarning(answer, getCorrectAnswer(numPlayed), userName);
             }
         }
         if (streak == 3) {
