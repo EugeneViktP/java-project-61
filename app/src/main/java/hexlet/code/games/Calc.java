@@ -15,10 +15,9 @@ public class Calc {
         };
     }
     public static void startGame() {
-        String ruleCalc = "What is the result of the expression?";
         Scanner scanner = new Scanner(System.in);
         String userName = Cli.greetings();
-        System.out.println(ruleCalc);
+        System.out.println(Engine.calcRules);
         int[] firstNumber = new int[Engine.maxRounds];
         int[] secondNumber = new int[Engine.maxRounds];
         char[] operators = {'+', '-', '*'};

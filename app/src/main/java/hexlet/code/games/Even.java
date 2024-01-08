@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Even {
     private static final int BOUND_FOR_RANDOM = 100;
     public static boolean numberIsEven(int numberToCheck) {
+
         return (numberToCheck % 2 == 0);
     }
     public static String getCorrectAnswer(int number) {
@@ -16,10 +17,9 @@ public class Even {
         }
     }
     public static void startGame() {
-        String ruleEven = "Answer 'yes' if the number is even, otherwise answer 'no'";
         Scanner scanner = new Scanner(System.in);
         String userName = Cli.greetings();
-        System.out.println(ruleEven);
+        System.out.println(Engine.evenRules);
         int[] numberBuffer = new int[Engine.maxRounds];
         for (int i = 0; i < Engine.maxRounds; i++) {
             numberBuffer[i] = Engine.getRandom(BOUND_FOR_RANDOM);
