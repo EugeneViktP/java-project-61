@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class GCD {
+    private static final int BOUND_FOR_RANDOM = 20;
     public static int gcdEuclids(int n1, int n2) {
         if (n2 == 0) {
             return n1;
@@ -15,12 +16,10 @@ public class GCD {
         Scanner scanner = new Scanner(System.in);
         String userName = Cli.greetings();
         System.out.println(Engine.gcdRules);
-        int[] firstNumber = new int[Engine.maxRounds];
-        int[] secondNumber = new int[Engine.maxRounds];
+        int[] firstNumber = Engine.generateIntArray(BOUND_FOR_RANDOM);
+        int[] secondNumber = Engine.generateIntArray(BOUND_FOR_RANDOM);
         int[] correctAnswer = new int[Engine.maxRounds];
         for (int i = 0; i < Engine.maxRounds; i++) {
-            firstNumber[i] = Engine.getRandom(20);
-            secondNumber[i] = Engine.getRandom(20);
             correctAnswer[i] = gcdEuclids(firstNumber[i], secondNumber[i]);
         }
         int streak = 0;
@@ -28,7 +27,7 @@ public class GCD {
             System.out.println("Question: " + firstNumber[i] + " " + secondNumber[i]);
             System.out.println("Your answer is: ");
             String answer = scanner.next();
-            if (answer.equals(String.valueOf(gcdEuclids(firstNumber[i], secondNumber[i])))) {
+            if (answer.equals(String.valueOf(correctAnswer[i]))) {
                 System.out.println("Correct!");
                 streak++;
             } else {
