@@ -5,3 +5,4 @@
 [asciinema recording]:(https://asciinema.org/a/AoHc0otDk69v0zwS4SVwDfMRY)
 [asciinema recording]:(https://asciinema.org/a/GZhpHvcV47es8PFUVjS3LpaNa)
 [asciinema recording]:(https://asciinema.org/a/zfhNYqEJCcAal46ysYGacAKAn)
+[asciinema recording]:(https://asciinema.org/a/T1zU1rADtfXJJjeYxaqplDpcX)
