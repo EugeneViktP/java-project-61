@@ -38,8 +38,6 @@ public class GCD {
             System.out.println("Congratulations, " + userName + "!");
         }
         scanner.close();
-
-
     }
 }
 
