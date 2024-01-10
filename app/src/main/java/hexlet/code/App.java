@@ -20,6 +20,7 @@ public class App {
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Your choice: ");
         int gameNumber = scanner.nextInt();
         switch (gameNumber) {
             case 0 -> System.out.println("Exit");
