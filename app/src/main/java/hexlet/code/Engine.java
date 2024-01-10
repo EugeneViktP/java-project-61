@@ -20,8 +20,8 @@ public class Engine {
     }
     public static void sendWarning(String answer, String correctAnswer, String userName) {
         System.out.print("'" + answer + "' is wrong answer ;(.");
-        System.out.println("Correct Answer was '" + correctAnswer + "'");
-        System.out.println("Let's try again, " + userName);
+        System.out.println("Correct answer was '" + correctAnswer + "'");
+        System.out.println("Let's try again, " + userName + "!");
     }
     public static int[] generateIntArray(int boundForRandom) {
         int[] numberBuffer = new int[Engine.maxRounds];
