@@ -19,8 +19,8 @@ public class Engine {
         return random.nextInt(max - min + 1) + min;
     }
     public static void sendWarning(String answer, String correctAnswer, String userName) {
-        System.out.print("Answer: '" + answer + "' is wrong answer ;( .");
-        System.out.println("Correct Answer is '" + correctAnswer + "'");
+        System.out.print("'" + answer + "' is wrong answer ;(.");
+        System.out.println("Correct Answer was '" + correctAnswer + "'");
         System.out.println("Let's try again, " + userName);
     }
     public static int[] generateIntArray(int boundForRandom) {
