@@ -22,6 +22,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Your choice: ");
         int gameNumber = scanner.nextInt();
+        System.out.println();
         switch (gameNumber) {
             case 0 -> System.out.println("Exit");
             case 1 -> Greet.startGame();
