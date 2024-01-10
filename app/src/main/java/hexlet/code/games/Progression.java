@@ -40,7 +40,7 @@ public class Progression {
             int[] progressionPlayed = generateProgression();
             int hiddenNum = Engine.getRandom(10);
             System.out.println("Question: " + printProgression(progressionPlayed, hiddenNum));
-            System.out.println("Your answer is: ");
+            System.out.println("Your answer: ");
             String answer = scanner.next();
             if (answer.equals(String.valueOf(progressionPlayed[hiddenNum]))) {
                 System.out.println("Correct!");

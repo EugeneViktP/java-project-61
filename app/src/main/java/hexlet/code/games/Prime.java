@@ -32,8 +32,8 @@ public class Prime {
         int[] numBuffer = Engine.generateIntArray(BOUND_FOR_RANDOM);
         int streak = 0;
         for (var numPlayed : numBuffer) {
-            System.out.println("Number is: " + numPlayed);
-            System.out.println("Your answer is: ");
+            System.out.println("Question: " + numPlayed);
+            System.out.println("Your answer: ");
             String answer = scanner.next();
             if (answer.equals(getCorrectAnswer(numPlayed))) {
                 System.out.println("Correct!");
