@@ -30,7 +30,7 @@ public class Calc {
         }
         int streak = 0;
         for (var i = 0; i < Engine.MAX_ROUNDS; i++) {
-            System.out.println("Question: " + firstNum[i] + operatorUsed[i] + secondNum[i]);
+            System.out.println("Question: " + firstNum[i] + " " + operatorUsed[i] + " " + secondNum[i]);
             System.out.println("Your answer: ");
             String answer = scanner.next();
             if (answer.equals(String.valueOf(correctAnswer[i]))) {
