@@ -30,10 +30,11 @@ public class Even {
                 streak++;
             } else {
                 Engine.sendWarning(answer, getCorrectAnswer(numPlayed), userName);
+                break;
             }
-        }
-        if (streak == 3) {
-            System.out.println("Congratulations, " + userName + "!");
+            if (streak == 3) {
+                System.out.println("Congratulations, " + userName + "!");
+            }
         }
         scanner.close();
     }
