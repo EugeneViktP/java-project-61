@@ -34,9 +34,9 @@ public class Progression {
     public static void startGame() {
         Scanner scanner = new Scanner(System.in);
         String userName = Cli.greetings();
-        System.out.println(Engine.progressionRules);
+        System.out.println(Engine.PROGRESSION_RULLES);
         int streak = 0;
-        for (var i = 0; i < Engine.maxRounds; i++) {
+        for (var i = 0; i < Engine.MAX_ROUNDS; i++) {
             int[] progressionPlayed = generateProgression();
             int hiddenNum = Engine.getRandom(10);
             System.out.println("Question: " + printProgression(progressionPlayed, hiddenNum));

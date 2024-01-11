@@ -15,15 +15,15 @@ public class GCD {
     public static void startGame() {
         Scanner scanner = new Scanner(System.in);
         String userName = Cli.greetings();
-        System.out.println(Engine.gcdRules);
+        System.out.println(Engine.GCD_RULES);
         int[] firstNum = Engine.generateIntArray(BOUND_FOR_RANDOM);
         int[] secondNum = Engine.generateIntArray(BOUND_FOR_RANDOM);
-        int[] correctAnswer = new int[Engine.maxRounds];
-        for (int i = 0; i < Engine.maxRounds; i++) {
+        int[] correctAnswer = new int[Engine.MAX_ROUNDS];
+        for (int i = 0; i < Engine.MAX_ROUNDS; i++) {
             correctAnswer[i] = gcdEuclids(firstNum[i], secondNum[i]);
         }
         int streak = 0;
-        for (var i = 0; i < Engine.maxRounds; i++) {
+        for (var i = 0; i < Engine.MAX_ROUNDS; i++) {
             System.out.println("Question: " + firstNum[i] + " " + secondNum[i]);
             System.out.println("Your answer: ");
             String answer = scanner.next();

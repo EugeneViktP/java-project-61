@@ -18,7 +18,7 @@ public class Even {
     public static void startGame() {
         Scanner scanner = new Scanner(System.in);
         String userName = Cli.greetings();
-        System.out.println(Engine.evenRules);
+        System.out.println(Engine.EVEN_RULES);
         int[] numBuffer = Engine.generateIntArray(BOUND_FOR_RANDOM);
         int streak = 0;
         for (var numPlayed : numBuffer) {

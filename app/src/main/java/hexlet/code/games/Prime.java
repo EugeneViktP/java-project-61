@@ -28,7 +28,7 @@ public class Prime {
     public static void startGame() {
         Scanner scanner = new Scanner(System.in);
         String userName = Cli.greetings();
-        System.out.println(Engine.primeRules);
+        System.out.println(Engine.PRIME_RULES);
         int[] numBuffer = Engine.generateIntArray(BOUND_FOR_RANDOM);
         int streak = 0;
         for (var numPlayed : numBuffer) {
