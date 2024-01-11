@@ -9,7 +9,7 @@ public class Engine {
     public static final String EVEN_RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static final String CALC_RULES = "What is the result of the expression?";
     public static final String PROGRESSION_RULLES = "What number is missing in the progression?";
-    public static final String PRIME_RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
+    public static final String PRIME_RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static int getRandom(int boundNumber) {
         Random random = new Random();
         return random.nextInt(boundNumber);
