@@ -19,7 +19,7 @@ public class Engine {
         return random.nextInt(max - min + 1) + min;
     }
     public static void sendWarning(String answer, String correctAnswer, String userName) {
-        System.out.print("'" + answer + "' is wrong answer ;(.");
+        System.out.print("'" + answer + "' is wrong answer ;(. ");
         System.out.println("Correct answer was '" + correctAnswer + "'");
         System.out.println("Let's try again, " + userName + "!");
     }
