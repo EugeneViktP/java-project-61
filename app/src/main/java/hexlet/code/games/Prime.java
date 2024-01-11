@@ -33,7 +33,7 @@ public class Prime {
         int streak = 0;
         for (var numPlayed : numBuffer) {
             System.out.println("Question: " + numPlayed);
-            System.out.println("Your answer: ");
+            System.out.print("Your answer: ");
             String answer = scanner.next();
             if (answer.equals(getCorrectAnswer(numPlayed))) {
                 System.out.println("Correct!");
