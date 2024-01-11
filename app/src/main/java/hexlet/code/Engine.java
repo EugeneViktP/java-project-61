@@ -4,12 +4,12 @@ import java.util.Random;
 
 public class Engine {
 
-    public static int maxRounds = 3;
-    public static String gcdRules = "Find the greatest common divisor of given numbers";
-    public static String evenRules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    public static String calcRules = "What is the result of the expression?";
-    public static String progressionRules = "What number is missing in the progression?";
-    public static String primeRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
+    public static final int maxRounds = 3;
+    public static final String gcdRules = "Find the greatest common divisor of given numbers";
+    public static final String evenRules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    public static final String calcRules = "What is the result of the expression?";
+    public static final String progressionRules = "What number is missing in the progression?";
+    public static final String primeRules = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
     public static int getRandom(int boundNumber) {
         Random random = new Random();
         return random.nextInt(boundNumber);
