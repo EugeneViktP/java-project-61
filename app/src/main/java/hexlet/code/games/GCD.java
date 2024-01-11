@@ -32,10 +32,11 @@ public class GCD {
                 streak++;
             } else {
                 Engine.sendWarning(answer, String.valueOf(correctAnswer[i]), userName);
+                break;
             }
-        }
-        if (streak == 3) {
-            System.out.println("Congratulations, " + userName + "!");
+            if (streak == 3) {
+                System.out.println("Congratulations, " + userName + "!");
+            }
         }
         scanner.close();
     }

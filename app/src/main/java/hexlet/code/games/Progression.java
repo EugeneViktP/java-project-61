@@ -47,10 +47,11 @@ public class Progression {
                 streak++;
             } else {
                 Engine.sendWarning(answer, String.valueOf(progressionPlayed[hiddenNum]), userName);
+                break;
             }
-        }
-        if (streak == 3) {
-            System.out.println("Congratulations, " + userName + "!");
+            if (streak == 3) {
+                System.out.println("Congratulations, " + userName + "!");
+            }
         }
         scanner.close();
     }
