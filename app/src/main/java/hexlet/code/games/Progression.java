@@ -6,10 +6,16 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Progression {
+    private static final int MIN_BOUNDARY_MINNUM = 2;
+    private static final int MAX_BOUNDARY_MINNUM = 7;
+    private static final int MIN_BOUNDARY_LENGTH = 10;
+    private static final int MAX_BOUNDARY_LENGTH = 15;
+    private static final int MIN_BOUNDARY_STEP = 2;
+    private static final int MAX_BOUNDARY_STEP = 8;
     public static int[] generateProgression() {
-        int minNum = Engine.getRandom(2, 7);
-        int length = Engine.getRandom(10, 15);
-        int step = Engine.getRandom(2, 8);
+        int minNum = Engine.getRandom(MIN_BOUNDARY_MINNUM, MAX_BOUNDARY_MINNUM);
+        int length = Engine.getRandom(MIN_BOUNDARY_LENGTH, MAX_BOUNDARY_LENGTH);
+        int step = Engine.getRandom(MIN_BOUNDARY_STEP, MAX_BOUNDARY_STEP);
         int[] result = new int[length];
 
         for (var i = 0; i < result.length; i++) {
