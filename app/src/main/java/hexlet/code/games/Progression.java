@@ -44,7 +44,7 @@ public class Progression {
         int streak = 0;
         for (var i = 0; i < Engine.MAX_ROUNDS; i++) {
             int[] progressionPlayed = generateProgression();
-            int hiddenNum = Engine.getRandom(10);
+            int hiddenNum = Engine.getRandom(MIN_BOUNDARY_LENGTH);
             System.out.println("Question: " + printProgression(progressionPlayed, hiddenNum));
             System.out.print("Your answer: ");
             String answer = scanner.next();
