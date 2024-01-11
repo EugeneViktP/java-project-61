@@ -22,7 +22,7 @@ public class Progression {
         StringBuilder result = new StringBuilder();
         for (var i = 0; i < progression.length; i++) {
             if (i == numHidden) {
-                result.append("..");
+                result.append(".. ");
             } else {
                 result.append(progression[i]);
                 result.append(" ");
