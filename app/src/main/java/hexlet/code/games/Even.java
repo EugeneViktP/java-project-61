@@ -32,7 +32,7 @@ public class Even {
                 Engine.sendWarning(answer, getCorrectAnswer(numPlayed), userName);
                 break;
             }
-            if (streak == 3) {
+            if (streak == Engine.MAX_ROUNDS) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

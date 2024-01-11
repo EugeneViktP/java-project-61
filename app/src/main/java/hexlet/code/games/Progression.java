@@ -49,7 +49,7 @@ public class Progression {
                 Engine.sendWarning(answer, String.valueOf(progressionPlayed[hiddenNum]), userName);
                 break;
             }
-            if (streak == 3) {
+            if (streak == Engine.MAX_ROUNDS) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

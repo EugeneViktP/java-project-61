@@ -40,7 +40,7 @@ public class Calc {
                 Engine.sendWarning(answer, String.valueOf(correctAnswer[i]), userName);
                 break;
             }
-            if (streak == 3) {
+            if (streak == Engine.MAX_ROUNDS) {
                 System.out.println("Congratulations, " + userName + "!");
             }
         }

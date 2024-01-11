@@ -21,16 +21,16 @@ public class App {
         System.out.println("0 - Exit");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Your choice: ");
-        int gameNumber = scanner.nextInt();
+        var gameNumber = scanner.nextLine();
         System.out.println();
         switch (gameNumber) {
-            case 1 -> Greet.startGame();
-            case 2 -> Even.startGame();
-            case 3 -> Calc.startGame();
-            case 4 -> GCD.startGame();
-            case 5 -> Progression.startGame();
-            case 6 -> Prime.startGame();
-            case 0 -> System.out.println("Exit");
+            case "1" -> Greet.startGame();
+            case "2" -> Even.startGame();
+            case "3" -> Calc.startGame();
+            case "4" -> GCD.startGame();
+            case "5" -> Progression.startGame();
+            case "6" -> Prime.startGame();
+            case "0" -> System.out.println("Exit");
             default -> System.out.println("Wrong number");
         }
         scanner.close();
