@@ -1,5 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Prime {
     private static final int BOUND_FOR_RANDOM = 100;
@@ -28,7 +29,7 @@ public class Prime {
     public static void startGame() {
         String[][] gamePar = new String[Engine.MAX_ROUNDS][Engine.NUMBERS_OF_ANSWERS];
         for (var i = 0; i < Engine.MAX_ROUNDS; i++) {
-            int numBuffer = Engine.getRandom(BOUND_FOR_RANDOM);
+            int numBuffer = Utils.getRandom(BOUND_FOR_RANDOM);
             String question = String.valueOf(numBuffer);
             String correctAnswer = getCorrectAnswer(numBuffer);
             gamePar[i][0] = question;

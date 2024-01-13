@@ -1,5 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Calc {
     private static final int BOUND_FOR_RANDOM = 10;
@@ -15,11 +16,11 @@ public class Calc {
     public static void startGame() {
         String[][] gamePar = new String[Engine.MAX_ROUNDS][Engine.NUMBERS_OF_ANSWERS];
         for (var i = 0; i < Engine.MAX_ROUNDS; i++) {
-            int firstNum = Engine.getRandom(BOUND_FOR_RANDOM);
-            int secondNum = Engine.getRandom(BOUND_FOR_RANDOM);
+            int firstNum = Utils.getRandom(BOUND_FOR_RANDOM);
+            int secondNum = Utils.getRandom(BOUND_FOR_RANDOM);
             char[] operators = {'+', '-', '*'};
             char[] operatorUsed = new char[Engine.MAX_ROUNDS];
-            operatorUsed[i] = operators[Engine.getRandom(operators.length)];
+            operatorUsed[i] = operators[Utils.getRandom(operators.length)];
             int calcResult = calcTheResult(firstNum, secondNum, operatorUsed[i]);
             String question = (firstNum + " " + operatorUsed[i] + " " + secondNum);
             String correctAnswer = String.valueOf(calcResult);
@@ -27,6 +28,5 @@ public class Calc {
             gamePar[i][1] = correctAnswer;
         }
         Engine.startGame(gamePar, CALC_RULES);
-
     }
 }

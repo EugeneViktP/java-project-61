@@ -1,5 +1,6 @@
 package hexlet.code.games;
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
     private static final int BOUND_FOR_RANDOM = 20;
@@ -15,8 +16,8 @@ public class GCD {
     public static void startGame() {
         String[][] gamePar = new String[Engine.MAX_ROUNDS][Engine.NUMBERS_OF_ANSWERS];
         for (int i = 0; i < Engine.MAX_ROUNDS; i++) {
-            int firstNum = Engine.getRandom(BOUND_FOR_RANDOM);
-            int secondNum = Engine.getRandom(BOUND_FOR_RANDOM);
+            int firstNum = Utils.getRandom(BOUND_FOR_RANDOM);
+            int secondNum = Utils.getRandom(BOUND_FOR_RANDOM);
             int answer = gcdEuclides(firstNum, secondNum);
             String question = firstNum + " " + secondNum;
             String correctAnswer = String.valueOf(answer);
@@ -26,4 +27,3 @@ public class GCD {
         Engine.startGame(gamePar, GCD_RULES);
     }
 }
-
