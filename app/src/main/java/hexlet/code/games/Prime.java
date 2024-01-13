@@ -6,10 +6,10 @@ public class Prime {
     public static final String PRIME_RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static boolean isPrime(int number) {
-        if (number <= 1) {
+        if (number <= 2) {
             return false;
         } else {
-            for (var i = 2; i < number / 2; i++) {
+            for (var i = 2; i < number; i++) {
                 if (number % i == 0) {
                     return  false;
                 }
