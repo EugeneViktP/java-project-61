@@ -1,10 +1,9 @@
 package hexlet.code.games;
-import hexlet.code.Cli;
 import hexlet.code.Engine;
-import java.util.Scanner;
 
 public class Even {
     private static final int BOUND_FOR_RANDOM = 100;
+    public static final String EVEN_RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
     public static boolean numberIsEven(int numberToCheck) {
 
         return (numberToCheck % 2 == 0);
@@ -16,27 +15,14 @@ public class Even {
         return "no";
     }
     public static void startGame() {
-        Scanner scanner = new Scanner(System.in);
-        String userName = Cli.greetings();
-        System.out.println(Engine.EVEN_RULES);
-        int[] numBuffer = Engine.generateIntArray(BOUND_FOR_RANDOM);
-        int streak = 0;
-        for (var numPlayed : numBuffer) {
-            System.out.println("Question: " + numPlayed);
-            System.out.print("Your answer: ");
-            String answer = scanner.next();
-            if (answer.equals(getCorrectAnswer(numPlayed))) {
-                System.out.println("Correct!");
-                streak++;
-            } else {
-                Engine.sendWarning(answer, getCorrectAnswer(numPlayed), userName);
-                break;
-            }
-            if (streak == Engine.MAX_ROUNDS) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+        String[][] gamePar = new String[Engine.MAX_ROUNDS][Engine.NUMBERS_OF_ANSWERS];
+        for (var i = 0; i < Engine.MAX_ROUNDS; i++) {
+            int numBuffer = Engine.getRandom(BOUND_FOR_RANDOM);
+            String correctAnswer = getCorrectAnswer(numBuffer);
+            gamePar[i][0] = String.valueOf(numBuffer);
+            gamePar[i][1] = correctAnswer;
         }
-        scanner.close();
+        Engine.startGame(gamePar, EVEN_RULES);
     }
 
 }
