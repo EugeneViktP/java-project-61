@@ -2,7 +2,6 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
-import hexlet.code.games.Greet;
 import hexlet.code.games.Progression;
 import hexlet.code.games.Prime;
 
@@ -24,7 +23,7 @@ public class App {
         var gameNumber = scanner.nextLine();
         System.out.println();
         switch (gameNumber) {
-            case "1" -> Greet.startGame();
+            case "1" -> Cli.greetings();
             case "2" -> Even.startGame();
             case "3" -> Calc.startGame();
             case "4" -> GCD.startGame();
