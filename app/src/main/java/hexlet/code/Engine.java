@@ -11,7 +11,7 @@ public class Engine {
 
 
     public static final String PROGRESSION_RULLES = "What number is missing in the progression?";
-    public static final String PRIME_RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+
     public static int getRandom(int boundNumber) {
         Random random = new Random();
         return random.nextInt(boundNumber);
