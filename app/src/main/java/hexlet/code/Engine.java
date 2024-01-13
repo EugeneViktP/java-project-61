@@ -8,7 +8,7 @@ public class Engine {
     public static final Scanner SCANNER = new Scanner(System.in);
     public static final int MAX_ROUNDS = 3;
     public static final int NUMBERS_OF_ANSWERS = 2;
-    public static final String GCD_RULES = "Find the greatest common divisor of given numbers.";
+
 
     public static final String PROGRESSION_RULLES = "What number is missing in the progression?";
     public static final String PRIME_RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";

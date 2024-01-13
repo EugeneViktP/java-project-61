@@ -4,10 +4,12 @@ import hexlet.code.Engine;
 public class Even {
     private static final int BOUND_FOR_RANDOM = 100;
     public static final String EVEN_RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
     public static boolean numberIsEven(int numberToCheck) {
 
         return (numberToCheck % 2 == 0);
     }
+
     public static String getCorrectAnswer(int number) {
         if (numberIsEven(number)) {
             return "yes";
