@@ -9,7 +9,7 @@ public class Engine {
     public static final int MAX_ROUNDS = 3;
     public static final int NUMBERS_OF_ANSWERS = 2;
     public static final String GCD_RULES = "Find the greatest common divisor of given numbers.";
-    public static final String CALC_RULES = "What is the result of the expression?";
+
     public static final String PROGRESSION_RULLES = "What number is missing in the progression?";
     public static final String PRIME_RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     public static int getRandom(int boundNumber) {
@@ -41,15 +41,13 @@ public class Engine {
             String answer = SCANNER.next();
             if (answer.equals(gamePar[i][1])) {
                 System.out.println("Correct!");
-                //streak++;
             } else {
                 Engine.sendWarning(answer, gamePar[i][1], userName);
                 break;
             }
             System.out.println("Congratulations, " + userName + "!");
-            }
-        SCANNER.close();
         }
-
+        SCANNER.close();
     }
 
+}

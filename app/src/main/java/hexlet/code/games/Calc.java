@@ -1,12 +1,9 @@
 package hexlet.code.games;
-
-import hexlet.code.Cli;
 import hexlet.code.Engine;
-
-import java.util.Scanner;
 
 public class Calc {
     private static final int BOUND_FOR_RANDOM = 10;
+    public static final String CALC_RULES = "What is the result of the expression?";
     public static int calcTheResult(int firstNumber, int secondNumber, char operators) {
         return switch (operators) {
             case '+' -> firstNumber + secondNumber;
@@ -16,34 +13,20 @@ public class Calc {
         };
     }
     public static void startGame() {
-        Scanner scanner = new Scanner(System.in);
-        String userName = Cli.greetings();
-        System.out.println(Engine.CALC_RULES);
-        int[] firstNum = Engine.generateIntArray(BOUND_FOR_RANDOM);
-        int[] secondNum = Engine.generateIntArray(BOUND_FOR_RANDOM);
-        char[] operators = {'+', '-', '*'};
-        char[] operatorUsed = new char[Engine.MAX_ROUNDS];
-        int[] correctAnswer = new int[Engine.MAX_ROUNDS];
-        for (int i = 0; i < Engine.MAX_ROUNDS; i++) {
-            operatorUsed[i] = operators[Engine.getRandom(operators.length)];
-            correctAnswer[i] = calcTheResult(firstNum[i], secondNum[i], operatorUsed[i]);
-        }
-        int streak = 0;
+        String[][] gamePar = new String[Engine.MAX_ROUNDS][Engine.NUMBERS_OF_ANSWERS];
         for (var i = 0; i < Engine.MAX_ROUNDS; i++) {
-            System.out.println("Question: " + firstNum[i] + " " + operatorUsed[i] + " " + secondNum[i]);
-            System.out.println("Your answer: ");
-            String answer = scanner.next();
-            if (answer.equals(String.valueOf(correctAnswer[i]))) {
-                System.out.println("Correct!");
-                streak++;
-            } else {
-                Engine.sendWarning(answer, String.valueOf(correctAnswer[i]), userName);
-                break;
-            }
-            if (streak == Engine.MAX_ROUNDS) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            int firstNum = Engine.getRandom(BOUND_FOR_RANDOM);
+            int secondNum = Engine.getRandom(BOUND_FOR_RANDOM);
+            char[] operators = {'+', '-', '*'};
+            char[] operatorUsed = new char[Engine.MAX_ROUNDS];
+            operatorUsed[i] = operators[Engine.getRandom(operators.length)];
+            int calcResult = calcTheResult(firstNum, secondNum, operatorUsed[i]);
+            String question = (firstNum + " " + operatorUsed[i] + " " + secondNum);
+            String correctAnswer = String.valueOf(calcResult);
+            gamePar[i][0] = question;
+            gamePar[i][1] = correctAnswer;
         }
-        scanner.close();
+        Engine.startGame(gamePar, CALC_RULES);
+
     }
 }
