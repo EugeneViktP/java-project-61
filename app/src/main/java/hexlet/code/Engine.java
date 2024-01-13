@@ -10,7 +10,7 @@ public class Engine {
     public static final int NUMBERS_OF_ANSWERS = 2;
 
 
-    public static final String PROGRESSION_RULLES = "What number is missing in the progression?";
+
 
     public static int getRandom(int boundNumber) {
         Random random = new Random();

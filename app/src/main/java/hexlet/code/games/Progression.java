@@ -1,11 +1,8 @@
 package hexlet.code.games;
-
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
-import java.util.Scanner;
-
 public class Progression {
+    public static final String PROGRESSION_RULES = "What number is missing in the progression?";
     private static final int MIN_BOUNDARY_MINNUM = 2;
     private static final int MAX_BOUNDARY_MINNUM = 7;
     private static final int MIN_BOUNDARY_LENGTH = 10;
@@ -37,28 +34,20 @@ public class Progression {
         }
         return result.toString();
     }
+
     public static void startGame() {
-        Scanner scanner = new Scanner(System.in);
-        String userName = Cli.greetings();
-        System.out.println(Engine.PROGRESSION_RULLES);
-        int streak = 0;
+        String[][] gamePar = new String[Engine.MAX_ROUNDS][Engine.NUMBERS_OF_ANSWERS];
+
         for (var i = 0; i < Engine.MAX_ROUNDS; i++) {
             int[] progressionPlayed = generateProgression();
             int hiddenNum = Engine.getRandom(MIN_BOUNDARY_LENGTH);
-            System.out.println("Question: " + printProgression(progressionPlayed, hiddenNum));
-            System.out.print("Your answer: ");
-            String answer = scanner.next();
-            if (answer.equals(String.valueOf(progressionPlayed[hiddenNum]))) {
-                System.out.println("Correct!");
-                streak++;
-            } else {
-                Engine.sendWarning(answer, String.valueOf(progressionPlayed[hiddenNum]), userName);
-                break;
-            }
-            if (streak == Engine.MAX_ROUNDS) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
+            String question = printProgression(progressionPlayed, hiddenNum);
+            int answer = progressionPlayed[hiddenNum];
+            String correctAnswer = String.valueOf(answer);
+            gamePar[i][0] = question;
+            gamePar[i][1] = correctAnswer;
+
         }
-        scanner.close();
+        Engine.startGame(gamePar, PROGRESSION_RULES);
     }
 }
