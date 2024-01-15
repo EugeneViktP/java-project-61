@@ -1,3 +1,18 @@
+# Overview
+Welcome to the Brain Games! <br>
+Brain Games представляет комбинацию консольных игра <br>
+Каждая игра начинается после выбора соответствующего пункта меню <br>
+В ходе каждой игры вам будет предложено ответить на 3 вопроса <br>
+Условием достижения победы являются 3 правильных ответа подряд <br>
+Удачи!<br>
+
+## Download and setup
+Для использования игры вам необходимо: <br>
+1. Клонировать проект с Гитхаба на свой компьютер <br>
+2. Открыть проект в Intellij Idea <br>
+3. Запустить задачу Gradle installDist <br>
+4. После этого в консоли в директории app с помощью команды make run-dist запустить игру <br>
+ 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/EugeneViktP/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/EugeneViktP/java-project-61/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a778da2376eafc25e06a/maintainability)](https://codeclimate.com/github/EugeneViktP/java-project-61/maintainability)<br>
