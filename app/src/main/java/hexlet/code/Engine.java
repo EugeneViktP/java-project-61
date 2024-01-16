@@ -9,7 +9,10 @@ public class Engine {
 
     public static void startGame(String[][] gamePar, String rules) {
         Scanner scanner = new Scanner(System.in);
-        String userName = Cli.greetings();
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name?" + " ");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
         System.out.println(rules);
         for (var i = 0; i < MAX_ROUNDS; i++) {
             System.out.println("Question: " + gamePar[i][0]);

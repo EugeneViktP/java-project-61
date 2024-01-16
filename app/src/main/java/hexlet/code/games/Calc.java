@@ -13,10 +13,9 @@ public class Calc {
             int firstNum = Utils.getRandom(BOUND_FOR_RANDOM);
             int secondNum = Utils.getRandom(BOUND_FOR_RANDOM);
             char[] operators = {'+', '-', '*'};
-            char[] operatorUsed = new char[Engine.MAX_ROUNDS];
-            operatorUsed[i] = operators[Utils.getRandom(operators.length)];
-            int calcResult = calcTheResult(firstNum, secondNum, operatorUsed[i]);
-            String question = (firstNum + " " + operatorUsed[i] + " " + secondNum);
+            char operatorUsed = operators[Utils.getRandom(operators.length)];
+            int calcResult = calcTheResult(firstNum, secondNum, operatorUsed);
+            String question = (firstNum + " " + operatorUsed + " " + secondNum);
             String correctAnswer = String.valueOf(calcResult);
             gamePar[i][0] = question;
             gamePar[i][1] = correctAnswer;

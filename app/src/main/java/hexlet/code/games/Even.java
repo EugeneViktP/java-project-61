@@ -20,7 +20,6 @@ public class Even {
     }
 
     private static boolean numberIsEven(int numberToCheck) {
-
         return (numberToCheck % 2 == 0);
     }
 }

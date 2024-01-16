@@ -16,7 +16,10 @@ public class Progression {
         String[][] gamePar = new String[Engine.MAX_ROUNDS][Engine.NUMBERS_OF_ANSWERS];
 
         for (var i = 0; i < Engine.MAX_ROUNDS; i++) {
-            int[] progressionPlayed = generateProgression();
+            int minNum = Utils.getRandom(MIN_BOUNDARY_MINNUM, MAX_BOUNDARY_MINNUM);
+            int length = Utils.getRandom(MIN_BOUNDARY_LENGTH, MAX_BOUNDARY_LENGTH);
+            int step = Utils.getRandom(MIN_BOUNDARY_STEP, MAX_BOUNDARY_STEP);
+            int[] progressionPlayed = generateProgression(minNum, length, step);
             int hiddenNum = Utils.getRandom(MIN_BOUNDARY_LENGTH);
             String question = printProgression(progressionPlayed, hiddenNum);
             int answer = progressionPlayed[hiddenNum];
@@ -27,15 +30,10 @@ public class Progression {
         Engine.startGame(gamePar, PROGRESSION_RULES);
     }
 
-    private static int[] generateProgression() {
-        int minNum = Utils.getRandom(MIN_BOUNDARY_MINNUM, MAX_BOUNDARY_MINNUM);
-        int length = Utils.getRandom(MIN_BOUNDARY_LENGTH, MAX_BOUNDARY_LENGTH);
-        int step = Utils.getRandom(MIN_BOUNDARY_STEP, MAX_BOUNDARY_STEP);
+    private static int[] generateProgression(int minNum, int length, int step) {
         int[] result = new int[length];
-
         for (var i = 0; i < result.length; i++) {
-            result[i] = minNum;
-            minNum = minNum + step;
+            result[i] = minNum + step * i;
         }
         return result;
     }
@@ -49,7 +47,6 @@ public class Progression {
                 result.append(progression[i]);
                 result.append(" ");
             }
-
         }
         return result.toString();
     }
